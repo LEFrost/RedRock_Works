@@ -16,21 +16,21 @@ namespace Work3_3
             studentName.Add(new Student() { Age = 182, Num = 235654, Name = "李四" });
             studentName.Add(new Student() { Age = 172, Num = 434446, Name = "马武" });
             studentName.Add(new Student() { Age = 182, Num = 632366, Name = "龙刘" });
-            studentName.Sort(new nameSort());
+            studentName.Sort(new NameSort());
             Console.WriteLine("按名字排序");
             foreach (Student n in studentName)
                 Console.WriteLine(n);
             Console.WriteLine("按年龄排序");
-            studentName.Sort(new ageSort());
+            studentName.Sort(new AgeSort());
             foreach (Student n in studentName)
                 Console.WriteLine(n);
             Console.WriteLine("按学号排序");
-            studentName.Sort(new numSort());
+            studentName.Sort(new NumSort());
             foreach (Student n in studentName)
                 Console.WriteLine(n);
         }
     }
-    class nameSort : IComparer<Student>
+    class NameSort : IComparer<Student>
     {
         public int Compare(Student x, Student y)
         {
@@ -38,14 +38,14 @@ namespace Work3_3
 
         }
     }
-    class ageSort : IComparer<Student>
+    class AgeSort : IComparer<Student>
     {
         public int Compare(Student x, Student y)
         {
             return x.Age.CompareTo(y.Age);
         }
     }
-    class numSort : IComparer<Student>
+    class NumSort : IComparer<Student>
     {
         public int Compare(Student x, Student y)
         {
