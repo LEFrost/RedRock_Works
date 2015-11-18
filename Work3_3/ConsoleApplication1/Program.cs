@@ -30,6 +30,29 @@ namespace Work3_3
                 Console.WriteLine(n);
         }
     }
+    class nameSort : IComparer<Student>
+    {
+        public int Compare(Student x, Student y)
+        {
+            return x.Name.CompareTo(y.Name);
+
+        }
+    }
+    class ageSort : IComparer<Student>
+    {
+        public int Compare(Student x, Student y)
+        {
+            return x.Age.CompareTo(y.Age);
+        }
+    }
+    class numSort : IComparer<Student>
+    {
+        public int Compare(Student x, Student y)
+        {
+            return x.Num.CompareTo(y.Num);
+        }
+    }
+
     class Student
     {
         private string name;
@@ -80,27 +103,5 @@ namespace Work3_3
             return "name:" + name + " age:" + age + " num:" + num;
         }
 
-    }
-    class nameSort : IComparer<Student>
-    {
-        public int Compare(Student x, Student y)
-        {
-            return x.Name.CompareTo(y.Name);
-
-        }
-    }
-    class ageSort : IComparer<Student>
-    {
-        public int Compare(Student x, Student y)
-        {
-            return x.Age.CompareTo(y.Age);
-        }
-    }
-    class numSort : IComparer<Student>
-    {
-        public int Compare(Student x, Student y)
-        {
-            return x.Num.CompareTo(y.Num);
-        }
     }
 }
